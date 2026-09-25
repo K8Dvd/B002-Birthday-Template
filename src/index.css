@@ -1074,6 +1074,14 @@ button:disabled {
     );
 }
 
+.cake-action-button {
+  position: relative;
+  z-index: 30;
+  min-height: 48px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .cake-game {
   position: relative;
 
@@ -3042,11 +3050,34 @@ button:disabled {
 
   .balloon-field {
     height: 450px;
+    width: calc(100% - 12px);
   }
 
   .balloon {
     width: 58px;
     height: 76px;
+  }
+
+  /* Keep the existing balloon layout, but pull only the two edge balloons
+     inward on phones so their full hit area stays inside the screen. */
+  .balloon:nth-child(5) {
+    left: 78% !important;
+  }
+
+  .balloon:nth-child(9) {
+    left: 72% !important;
+  }
+
+  /* A comfortable finger-sized target for the cake action button.
+     The visual styling stays the same; only the mobile hit area grows. */
+  .cake-action-button {
+    position: relative;
+    z-index: 30;
+    min-width: min(280px, 100%);
+    min-height: 52px;
+    padding: 15px 24px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .balloon-string {

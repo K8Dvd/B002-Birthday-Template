@@ -675,7 +675,7 @@ function App() {
             {!wishMade ? (
               <>
                 <button
-                  className="primary-button"
+                  className="primary-button cake-action-button"
                   onClick={
                     cakeStep < 3
                       ? addCakeLayer
